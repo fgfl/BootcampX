@@ -21,7 +21,7 @@ const assistedTeachersQuery = `
     WHERE cohorts.name = $1
     ORDER BY teachers.name;
 `;
-const assistedTeachersValue = [`${cohort}`];
+const assistedTeachersValue = [`${cohort || 'JUL02'}`];
 
 pool.query(assistedTeachersQuery, assistedTeachersValue)
 .then((res) => {
